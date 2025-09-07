@@ -21,7 +21,7 @@ public class V8ToV9Migrator extends AbstractMigrator<V8GlobalBuildStatsPOJO, V9G
 
     @Override
     protected List<RetentionStrategy> migrateRetentionStrategies(List<RetentionStrategy> retentionStrategies) {
-        if(retentionStrategies == null){
+        if (retentionStrategies == null) {
             return new ArrayList<RetentionStrategy>();
         } else {
             return super.migrateRetentionStrategies(retentionStrategies);

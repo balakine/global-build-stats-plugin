@@ -11,7 +11,7 @@ import hudson.plugins.global_build_stats.rententionstrategies.strategybehaviours
  * @author fcamblor
  */
 public class DoNotKeepBuildResultWhenDiscarded extends RetentionStrategy<DoNotKeepBuildResultWhenDiscarded>
-                implements BuildDeletedListener {
+        implements BuildDeletedListener {
 
     @Override
     public String getConfigPage() {

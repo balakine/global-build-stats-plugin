@@ -17,20 +17,20 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 class BuildStatChartDataCreationTest {
 
-	@Test
-	void testBuildStatChartDataInstantiation() {
-		BuildStatConfiguration config = new BuildStatConfiguration();
-		DataSetBuilder<String, DateRange> dsb = new DataSetBuilder<>();
-		List<AbstractBuildStatChartDimension> dimensions = new ArrayList<>();
-		dimensions.add(new AbstractBuildStatChartDimension.BuildCounterChartDimension(config, dsb));
+    @Test
+    void testBuildStatChartDataInstantiation() {
+        BuildStatConfiguration config = new BuildStatConfiguration();
+        DataSetBuilder<String, DateRange> dsb = new DataSetBuilder<>();
+        List<AbstractBuildStatChartDimension> dimensions = new ArrayList<>();
+        dimensions.add(new AbstractBuildStatChartDimension.BuildCounterChartDimension(config, dsb));
 
-		Calendar firstDay = new GregorianCalendar(2010, Calendar.JANUARY, 1);
-		Calendar secondDay = new GregorianCalendar(2010, Calendar.JANUARY, 2);
-		DateRange dr = new DateRange(firstDay, secondDay, new SimpleDateFormat("dd/MM/yyyy"));
-		dsb.add(1, Messages.Build_Results_Item_Legend_Statuses_SUCCESS(), dr);
-		dsb.add(2, Messages.Build_Results_Item_Legend_Statuses_FAILURES(), dr);
+        Calendar firstDay = new GregorianCalendar(2010, Calendar.JANUARY, 1);
+        Calendar secondDay = new GregorianCalendar(2010, Calendar.JANUARY, 2);
+        DateRange dr = new DateRange(firstDay, secondDay, new SimpleDateFormat("dd/MM/yyyy"));
+        dsb.add(1, Messages.Build_Results_Item_Legend_Statuses_SUCCESS(), dr);
+        dsb.add(2, Messages.Build_Results_Item_Legend_Statuses_FAILURES(), dr);
 
-		// Calling constructor
-		assertDoesNotThrow(() -> new BuildStatChartData(dimensions));
-	}
+        // Calling constructor
+        assertDoesNotThrow(() -> new BuildStatChartData(dimensions));
+    }
 }

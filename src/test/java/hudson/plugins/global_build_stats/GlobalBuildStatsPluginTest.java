@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class GlobalBuildStatsPluginTest {
 
-	@Test
-	void testEscapeAntiSlashes() {
-		assertEquals(".*test\\\\sbuild.*", GlobalBuildStatsPlugin.escapeAntiSlashes(".*test\\sbuild.*"));
-		assertNull(GlobalBuildStatsPlugin.escapeAntiSlashes(null));
-	}
+    @Test
+    void testEscapeAntiSlashes() {
+        assertEquals(".*test\\\\sbuild.*", GlobalBuildStatsPlugin.escapeAntiSlashes(".*test\\sbuild.*"));
+        assertNull(GlobalBuildStatsPlugin.escapeAntiSlashes(null));
+    }
 }

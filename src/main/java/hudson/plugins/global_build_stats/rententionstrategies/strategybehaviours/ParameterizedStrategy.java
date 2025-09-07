@@ -9,5 +9,6 @@ import java.util.Map;
  */
 public interface ParameterizedStrategy<T extends RetentionStrategy> {
     public void updateStrategyParameters(Map<String, String[]> parameters);
+
     public void updateStrategyParameters(T strategyToCopy);
 }

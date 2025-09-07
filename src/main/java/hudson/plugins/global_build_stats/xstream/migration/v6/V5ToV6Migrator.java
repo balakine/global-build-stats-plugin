@@ -11,35 +11,36 @@ import java.util.List;
 /**
  * V6 Evolutions :
  * - Creation of BuildStatConfiguration.buildFilters and move of jobFilter, nodeFilter and shownBuildResults into this encapsulated class
+ *
  * @author fcamblor
  */
 public class V5ToV6Migrator extends PreV8AbstractMigrator<V5GlobalBuildStatsPOJO, V6GlobalBuildStatsPOJO> {
 
-	@Override
-	protected V6GlobalBuildStatsPOJO createMigratedPojo() {
-		return new V6GlobalBuildStatsPOJO();
-	}
-	
-	@Override
-	protected List<BuildStatConfiguration> migrateBuildStatConfigs(
-			List<BuildStatConfiguration> buildStatConfigs) {
-		
-		ArrayList<BuildStatConfiguration> migratedBuildStatConfigs = new ArrayList<BuildStatConfiguration>();
-		for(BuildStatConfiguration cfg : buildStatConfigs){
-			// Migrating old data into new BuildSearchCriteria which will be persisted !
-			BuildSearchCriteria criteria = new BuildSearchCriteria(
-					cfg.getJobFilter(), 
-					cfg.getNodeFilter(), 
-					cfg.isSuccessShown(), 
-					cfg.isFailuresShown(), 
-					cfg.isUnstablesShown(), 
-					cfg.isAbortedShown(), 
-					cfg.isNotBuildShown());
-			
-			cfg.setBuildFilters(criteria);
-			
-			migratedBuildStatConfigs.add(cfg);
-		}
-		return migratedBuildStatConfigs;
-	}
+    @Override
+    protected V6GlobalBuildStatsPOJO createMigratedPojo() {
+        return new V6GlobalBuildStatsPOJO();
+    }
+
+    @Override
+    protected List<BuildStatConfiguration> migrateBuildStatConfigs(
+            List<BuildStatConfiguration> buildStatConfigs) {
+
+        ArrayList<BuildStatConfiguration> migratedBuildStatConfigs = new ArrayList<BuildStatConfiguration>();
+        for (BuildStatConfiguration cfg : buildStatConfigs) {
+            // Migrating old data into new BuildSearchCriteria which will be persisted !
+            BuildSearchCriteria criteria = new BuildSearchCriteria(
+                    cfg.getJobFilter(),
+                    cfg.getNodeFilter(),
+                    cfg.isSuccessShown(),
+                    cfg.isFailuresShown(),
+                    cfg.isUnstablesShown(),
+                    cfg.isAbortedShown(),
+                    cfg.isNotBuildShown());
+
+            cfg.setBuildFilters(criteria);
+
+            migratedBuildStatConfigs.add(cfg);
+        }
+        return migratedBuildStatConfigs;
+    }
 }

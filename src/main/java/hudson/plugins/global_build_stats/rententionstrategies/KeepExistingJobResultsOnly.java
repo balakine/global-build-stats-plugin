@@ -20,13 +20,13 @@ public class KeepExistingJobResultsOnly extends RetentionStrategy<KeepExistingJo
 
     @Override
     public void strategyActivated(GlobalBuildStatsPluginSaver pluginSaver) {
-        pluginSaver.updatePlugin(new GlobalBuildStatsPluginSaver.BeforeSavePluginCallback(){
+        pluginSaver.updatePlugin(new GlobalBuildStatsPluginSaver.BeforeSavePluginCallback() {
             @Override
             public void changePluginStateBeforeSavingIt(GlobalBuildStatsPlugin plugin) {
                 List<JobBuildResult> jobBuildResultsToRemove = new ArrayList<JobBuildResult>();
-                for(JobBuildResult jbr : plugin.getJobBuildResults()){
+                for (JobBuildResult jbr : plugin.getJobBuildResults()) {
                     JobBuildSearchResult searchResult = JobBuildResultFactory.INSTANCE.createJobBuildSearchResult(jbr);
-                    if(!searchResult.isBuildAccessible()){
+                    if (!searchResult.isBuildAccessible()) {
                         jobBuildResultsToRemove.add(jbr);
                     }
                 }
