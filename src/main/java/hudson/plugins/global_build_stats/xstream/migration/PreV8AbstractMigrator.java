@@ -1,5 +1,7 @@
 package hudson.plugins.global_build_stats.xstream.migration;
 
+import com.thoughtworks.xstream.converters.UnmarshallingContext;
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import hudson.model.Hudson;
 import hudson.model.Job;
 import hudson.model.Run;
@@ -9,9 +11,6 @@ import hudson.plugins.global_build_stats.model.ModelIdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.thoughtworks.xstream.converters.UnmarshallingContext;
-import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 
 public abstract class PreV8AbstractMigrator<TFROM extends GlobalBuildStatsPOJO, TTO extends GlobalBuildStatsPOJO> implements GlobalBuildStatsDataMigrator<TFROM, TTO> {
 

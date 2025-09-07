@@ -1,11 +1,11 @@
 package hudson.plugins.global_build_stats.model;
 
+import org.kohsuke.stapler.export.Exported;
+import org.kohsuke.stapler.export.ExportedBean;
+
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Objects;
-
-import org.kohsuke.stapler.export.Exported;
-import org.kohsuke.stapler.export.ExportedBean;
 
 @ExportedBean(defaultVisibility = 3)
 public class DateRange implements Comparable<DateRange> {

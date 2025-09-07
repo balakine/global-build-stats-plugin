@@ -3,20 +3,16 @@ package hudson.plugins.global_build_stats.model;
 import hudson.plugins.global_build_stats.Messages;
 import hudson.util.DataSetBuilder;
 import hudson.util.StackedAreaRenderer2;
-
-import java.awt.Color;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.CategoryDataset;
 
-import javax.swing.*;
+import java.awt.*;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractBuildStatChartDimension {
 

@@ -1,11 +1,6 @@
 package hudson.plugins.global_build_stats;
 
-import hudson.plugins.global_build_stats.model.BuildHistorySearchCriteria;
-import hudson.plugins.global_build_stats.model.BuildSearchCriteria;
-import hudson.plugins.global_build_stats.model.BuildStatConfiguration;
-import hudson.plugins.global_build_stats.model.HistoricScale;
-import hudson.plugins.global_build_stats.model.YAxisChartType;
-
+import hudson.plugins.global_build_stats.model.*;
 import org.kohsuke.stapler.StaplerRequest2;
 
 public class FromRequestObjectFactory {

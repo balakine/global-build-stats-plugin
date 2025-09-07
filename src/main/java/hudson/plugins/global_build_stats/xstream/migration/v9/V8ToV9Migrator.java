@@ -2,8 +2,6 @@ package hudson.plugins.global_build_stats.xstream.migration.v9;
 
 import hudson.plugins.global_build_stats.rententionstrategies.RetentionStrategy;
 import hudson.plugins.global_build_stats.xstream.migration.AbstractMigrator;
-import hudson.plugins.global_build_stats.xstream.migration.PreV9AbstractMigrator;
-import hudson.plugins.global_build_stats.xstream.migration.v7.V7GlobalBuildStatsPOJO;
 import hudson.plugins.global_build_stats.xstream.migration.v8.V8GlobalBuildStatsPOJO;
 
 import java.util.ArrayList;

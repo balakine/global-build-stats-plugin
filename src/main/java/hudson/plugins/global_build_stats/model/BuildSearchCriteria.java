@@ -3,7 +3,6 @@ package hudson.plugins.global_build_stats.model;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.plugins.global_build_stats.FieldFilter;
 import hudson.plugins.global_build_stats.FieldFilterFactory;
-
 import org.kohsuke.stapler.export.Exported;
 import org.kohsuke.stapler.export.ExportedBean;
 

@@ -5,7 +5,10 @@ import hudson.model.Hudson;
 import hudson.plugins.global_build_stats.util.CollectionsUtil;
 import org.apache.commons.io.FileUtils;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Level;

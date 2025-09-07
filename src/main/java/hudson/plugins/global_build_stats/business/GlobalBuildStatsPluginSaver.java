@@ -8,16 +8,11 @@ import hudson.plugins.global_build_stats.rententionstrategies.DoNotKeepBuildResu
 import hudson.plugins.global_build_stats.rententionstrategies.KeepExistingJobResultsOnly;
 import hudson.plugins.global_build_stats.rententionstrategies.RetentionStrategy;
 import hudson.plugins.global_build_stats.xstream.GlobalBuildStatsXStreamConverter;
-import hudson.security.Permission;
 import hudson.util.DaemonThreadFactory;
 
 import java.io.File;
-
-import org.kohsuke.stapler.export.Exported;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

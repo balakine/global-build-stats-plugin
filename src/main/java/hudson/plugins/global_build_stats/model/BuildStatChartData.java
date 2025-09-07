@@ -1,13 +1,12 @@
 package hudson.plugins.global_build_stats.model;
 
 import hudson.util.DataSetBuilder;
+import org.kohsuke.stapler.export.Exported;
+import org.kohsuke.stapler.export.ExportedBean;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.kohsuke.stapler.export.Exported;
-import org.kohsuke.stapler.export.ExportedBean;
 
 @ExportedBean
 public class BuildStatChartData {

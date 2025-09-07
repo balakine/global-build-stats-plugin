@@ -1,28 +1,16 @@
 package hudson.plugins.global_build_stats.xstream.migration;
 
-import com.google.common.io.Files;
-import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
-import hudson.model.Hudson;
 import hudson.model.Job;
 import hudson.model.Run;
 import hudson.plugins.global_build_stats.model.BuildStatConfiguration;
 import hudson.plugins.global_build_stats.model.JobBuildResult;
 import hudson.plugins.global_build_stats.model.JobBuildResultSharder;
 import hudson.plugins.global_build_stats.model.ModelIdGenerator;
-import hudson.plugins.global_build_stats.xstream.GlobalBuildStatsXStreamConverter;
-import hudson.plugins.global_build_stats.xstream.migration.GlobalBuildStatsDataMigrator;
-import hudson.plugins.global_build_stats.xstream.migration.GlobalBuildStatsPOJO;
 import jenkins.model.Jenkins;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public abstract class PreV9AbstractMigrator<TFROM extends GlobalBuildStatsPOJO, TTO extends GlobalBuildStatsPOJO> implements GlobalBuildStatsDataMigrator<TFROM, TTO> {

@@ -2,10 +2,8 @@ package hudson.plugins.global_build_stats.rententionstrategies;
 
 import hudson.model.Run;
 import hudson.plugins.global_build_stats.GlobalBuildStatsPlugin;
-import hudson.plugins.global_build_stats.JobBuildResultFactory;
 import hudson.plugins.global_build_stats.business.GlobalBuildStatsPluginSaver;
 import hudson.plugins.global_build_stats.model.JobBuildResult;
-import hudson.plugins.global_build_stats.model.JobBuildSearchResult;
 import hudson.plugins.global_build_stats.rententionstrategies.strategybehaviours.BuildCompletedListener;
 import hudson.plugins.global_build_stats.rententionstrategies.strategybehaviours.ParameterizedStrategy;
 

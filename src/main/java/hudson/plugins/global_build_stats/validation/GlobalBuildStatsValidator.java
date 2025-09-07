@@ -1,11 +1,8 @@
 package hudson.plugins.global_build_stats.validation;
 
-import java.util.logging.Logger;
-
 import hudson.plugins.global_build_stats.FieldFilterFactory;
 import hudson.plugins.global_build_stats.Messages;
 import hudson.plugins.global_build_stats.model.HistoricScale;
-import hudson.plugins.global_build_stats.model.JobBuildResultSharder;
 import hudson.util.FormValidation;
 
 public class GlobalBuildStatsValidator {

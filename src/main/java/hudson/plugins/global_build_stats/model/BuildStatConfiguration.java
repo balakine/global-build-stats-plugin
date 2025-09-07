@@ -3,15 +3,13 @@ package hudson.plugins.global_build_stats.model;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.plugins.global_build_stats.FieldFilter;
 import hudson.plugins.global_build_stats.FieldFilterFactory;
+import org.kohsuke.stapler.export.Exported;
+import org.kohsuke.stapler.export.ExportedBean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.kohsuke.stapler.export.Exported;
-import org.kohsuke.stapler.export.ExportedBean;
 
 /**
  * Data persisted for every build stat configuration allowing to create charts

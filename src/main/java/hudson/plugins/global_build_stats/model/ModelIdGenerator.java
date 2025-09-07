@@ -3,12 +3,7 @@ package hudson.plugins.global_build_stats.model;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import java.security.SecureRandom;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class ModelIdGenerator {
 

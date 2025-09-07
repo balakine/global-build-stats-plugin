@@ -1,12 +1,12 @@
 package hudson.plugins.global_build_stats.xstream;
 
-import com.google.common.io.Files;
-import com.thoughtworks.xstream.XStream;
-import hudson.model.Hudson;
+import com.thoughtworks.xstream.converters.Converter;
+import com.thoughtworks.xstream.converters.MarshallingContext;
+import com.thoughtworks.xstream.converters.UnmarshallingContext;
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;
+import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import hudson.plugins.global_build_stats.GlobalBuildStatsPlugin;
 import hudson.plugins.global_build_stats.model.BuildStatConfiguration;
-import hudson.plugins.global_build_stats.model.JobBuildResult;
-import hudson.plugins.global_build_stats.rententionstrategies.RetentionStrategy;
 import hudson.plugins.global_build_stats.xstream.migration.GlobalBuildStatsDataMigrator;
 import hudson.plugins.global_build_stats.xstream.migration.GlobalBuildStatsPOJO;
 import hudson.plugins.global_build_stats.xstream.migration.v0.InitialMigrator;
@@ -17,24 +17,10 @@ import hudson.plugins.global_build_stats.xstream.migration.v4.V3ToV4Migrator;
 import hudson.plugins.global_build_stats.xstream.migration.v5.V4ToV5Migrator;
 import hudson.plugins.global_build_stats.xstream.migration.v6.V5ToV6Migrator;
 import hudson.plugins.global_build_stats.xstream.migration.v7.V6ToV7Migrator;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
-
-import com.thoughtworks.xstream.converters.Converter;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.UnmarshallingContext;
-import com.thoughtworks.xstream.io.HierarchicalStreamReader;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import hudson.plugins.global_build_stats.xstream.migration.v8.V7ToV8Migrator;
 import hudson.plugins.global_build_stats.xstream.migration.v9.V8ToV9Migrator;
+
+import java.util.logging.Logger;
 
 /**
  * XStream converter for GlobalBuildStatsPlugin XStream data

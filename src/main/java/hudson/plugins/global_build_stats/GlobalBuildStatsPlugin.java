@@ -2,11 +2,7 @@ package hudson.plugins.global_build_stats;
 
 import hudson.Extension;
 import hudson.Plugin;
-import hudson.model.ManagementLink;
-import hudson.model.TaskListener;
-import hudson.model.Api;
-import hudson.model.Hudson;
-import hudson.model.Run;
+import hudson.model.*;
 import hudson.model.listeners.ItemListener;
 import hudson.model.listeners.RunListener;
 import hudson.plugins.global_build_stats.business.GlobalBuildStatsBusiness;
@@ -16,20 +12,9 @@ import hudson.plugins.global_build_stats.validation.GlobalBuildStatsValidator;
 import hudson.security.Permission;
 import hudson.util.ChartUtil;
 import hudson.util.FormValidation;
-
-import java.io.File;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import jakarta.servlet.ServletException;
-
 import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
-
 import org.jfree.chart.JFreeChart;
 import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.QueryParameter;
@@ -39,6 +24,13 @@ import org.kohsuke.stapler.export.Exported;
 import org.kohsuke.stapler.export.ExportedBean;
 import org.kohsuke.stapler.export.Flavor;
 import org.kohsuke.stapler.interceptor.RequirePOST;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Entry point of the global build stats plugin
