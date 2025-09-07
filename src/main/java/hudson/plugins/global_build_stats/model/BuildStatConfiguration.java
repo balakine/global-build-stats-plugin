@@ -280,9 +280,7 @@ public class BuildStatConfiguration implements Serializable {
         if (!historicScale.equals(that.historicScale)) return false;
         if (!yAxisChartType.equals(that.yAxisChartType)) return false;
         if (!dimensionsShown.equals(that.dimensionsShown)) return false;
-        if (!buildFilters.equals(that.buildFilters)) return false;
-
-        return true;
+        return buildFilters.equals(that.buildFilters);
     }
 
     @Override

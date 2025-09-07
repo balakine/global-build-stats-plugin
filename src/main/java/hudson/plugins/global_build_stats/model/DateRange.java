@@ -10,8 +10,9 @@ import java.util.Objects;
 @ExportedBean(defaultVisibility = 3)
 public class DateRange implements Comparable<DateRange> {
 
-    private Calendar start, end;
-    private DateFormat dateFormatter;
+    private final Calendar start;
+    private final Calendar end;
+    private final DateFormat dateFormatter;
 
     public DateRange(Calendar _start, Calendar _end, DateFormat _dateFormatter) {
         this.start = (Calendar) _start.clone();
@@ -25,7 +26,7 @@ public class DateRange implements Comparable<DateRange> {
 
     @Override
     public String toString() {
-        return new StringBuilder().append(dateFormatter.format(start.getTime())).append(" --> ").append(dateFormatter.format(end.getTime())).toString();
+        return dateFormatter.format(start.getTime()) + " --> " + dateFormatter.format(end.getTime());
     }
 
     @Exported

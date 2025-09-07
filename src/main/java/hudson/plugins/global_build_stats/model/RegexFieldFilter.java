@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class RegexFieldFilter implements FieldFilter {
 
-    private Pattern fieldPattern;
+    private final Pattern fieldPattern;
 
     public RegexFieldFilter(String fieldPattern) {
         this.fieldPattern = Pattern.compile(fieldPattern);

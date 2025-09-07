@@ -11,7 +11,7 @@ import java.util.List;
 @ExportedBean
 public class BuildStatChartData {
 
-    private List<BuildStatChartDimension> dimensions = new ArrayList<BuildStatChartData.BuildStatChartDimension>();
+    private final List<BuildStatChartDimension> dimensions = new ArrayList<BuildStatChartData.BuildStatChartDimension>();
 
     @ExportedBean
     public static class BuildStatChartDimension {

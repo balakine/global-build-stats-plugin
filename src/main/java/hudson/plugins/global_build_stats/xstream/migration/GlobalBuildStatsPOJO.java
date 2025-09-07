@@ -12,15 +12,15 @@ import java.util.List;
  * @author fcamblor
  */
 public interface GlobalBuildStatsPOJO {
-    public List<JobBuildResult> getJobBuildResults();
+    List<JobBuildResult> getJobBuildResults();
 
-    public void setJobBuildResults(List<JobBuildResult> jobBuildResults);
+    void setJobBuildResults(List<JobBuildResult> jobBuildResults);
 
-    public List<BuildStatConfiguration> getBuildStatConfigs();
+    List<BuildStatConfiguration> getBuildStatConfigs();
 
-    public void setBuildStatConfigs(List<BuildStatConfiguration> buildStatConfigs);
+    void setBuildStatConfigs(List<BuildStatConfiguration> buildStatConfigs);
 
-    public List<RetentionStrategy> getRetentionStrategies();
+    List<RetentionStrategy> getRetentionStrategies();
 
-    public void setRetentionStrategies(List<RetentionStrategy> retentionStrategies);
+    void setRetentionStrategies(List<RetentionStrategy> retentionStrategies);
 }

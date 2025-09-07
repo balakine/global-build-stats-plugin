@@ -28,7 +28,7 @@ public class GlobalBuildStatsPluginSaver {
 
     private static final Logger LOGGER = Logger.getLogger(GlobalBuildStatsPluginSaver.class.getName());
 
-    private GlobalBuildStatsPlugin plugin;
+    private final GlobalBuildStatsPlugin plugin;
 
     /**
      * See {@link #updatePlugin(hudson.plugins.global_build_stats.business.GlobalBuildStatsPluginSaver.BeforeSavePluginCallback)}

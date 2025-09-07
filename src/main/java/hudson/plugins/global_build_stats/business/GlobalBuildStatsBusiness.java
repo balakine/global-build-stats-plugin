@@ -100,7 +100,7 @@ public class GlobalBuildStatsBusiness {
                         .collect(java.util.stream.Collectors.toList());
 
                 plugin.getJobBuildResultsSharder().queueResultsToAdd(
-                        CollectionsUtil.<JobBuildResult>minus(jobBuildResultsRead, plugin.getJobBuildResults()));
+                        CollectionsUtil.minus(jobBuildResultsRead, plugin.getJobBuildResults()));
             }
         });
     }

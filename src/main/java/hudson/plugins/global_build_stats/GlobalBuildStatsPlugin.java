@@ -56,13 +56,13 @@ public class GlobalBuildStatsPlugin extends Plugin {
      * @deprecated Use jobBuildResultsSharder instead of jobBuildResults (since v8 file format)
      */
     @Deprecated
-    private transient List<JobBuildResult> jobBuildResults = new ArrayList<JobBuildResult>();
+    private final transient List<JobBuildResult> jobBuildResults = new ArrayList<JobBuildResult>();
 
     /**
      * List of persisted build statistics configurations used on the
      * global build stats screen
      */
-    private List<BuildStatConfiguration> buildStatConfigs = new ArrayList<BuildStatConfiguration>();
+    private final List<BuildStatConfiguration> buildStatConfigs = new ArrayList<BuildStatConfiguration>();
 
     /**
      * List of retention strategies applied on job results

@@ -19,7 +19,7 @@ public class ModelIdGenerator {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@', '$', '*', '!'
     };
 
-    private Map<Class, Set<String>> registeredIds = Collections.synchronizedMap(new HashMap<Class, Set<String>>());
+    private final Map<Class, Set<String>> registeredIds = Collections.synchronizedMap(new HashMap<Class, Set<String>>());
 
     private ModelIdGenerator() {
     }

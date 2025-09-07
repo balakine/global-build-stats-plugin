@@ -155,8 +155,6 @@ public class BuildSearchCriteria {
         if (!jobFilter.equals(bsc.jobFilter)) return false;
         if (!nodeFilter.equals(bsc.nodeFilter)) return false;
         if (!launcherFilter.equals(bsc.launcherFilter)) return false;
-        if (shownBuildResults != bsc.shownBuildResults) return false;
-
-        return true;
+        return shownBuildResults == bsc.shownBuildResults;
     }
 }

@@ -39,7 +39,7 @@ public enum BuildResult {
     @SuppressFBWarnings("ME_MUTABLE_ENUM_FIELD")
     public transient short code;
 
-    private BuildResult(short _code) {
+    BuildResult(short _code) {
         this.code = _code;
     }
 

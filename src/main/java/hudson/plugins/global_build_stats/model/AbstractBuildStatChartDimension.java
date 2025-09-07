@@ -12,6 +12,7 @@ import org.jfree.data.category.CategoryDataset;
 import java.awt.*;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class AbstractBuildStatChartDimension {
@@ -55,9 +56,7 @@ public abstract class AbstractBuildStatChartDimension {
         List<LegendItemData> sortedLegendItemsLabels = new ArrayList<LegendItemData>();
 
         // Build statuses
-        for (int i = 0; i < BUILD_STATUSES_LEGENDITEMS.length; i++) {
-            sortedLegendItemsLabels.add(BUILD_STATUSES_LEGENDITEMS[i]);
-        }
+        Collections.addAll(sortedLegendItemsLabels, BUILD_STATUSES_LEGENDITEMS);
 
         // Build durations
         sortedLegendItemsLabels.add(TOTAL_BUILD_TIME_LEGENDITEM);

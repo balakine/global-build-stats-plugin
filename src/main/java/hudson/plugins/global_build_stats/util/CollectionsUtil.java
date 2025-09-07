@@ -16,9 +16,7 @@ public class CollectionsUtil {
     public static <T> Set<T> toSet(List<T> list) {
         Set<T> set = new HashSet<T>();
         for (T t : list) {
-            if (!set.contains(t)) {
-                set.add(t);
-            }
+            set.add(t);
         }
         return set;
     }

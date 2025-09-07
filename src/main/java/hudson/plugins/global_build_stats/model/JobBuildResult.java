@@ -21,10 +21,10 @@ public class JobBuildResult implements Serializable {
     public static final String EMPTY_USER_NAME = null;
     public static final String MASTER_NODE_NAME = "master";
 
-    private BuildResult result;
-    private String jobName;
-    private int buildNumber;
-    private Calendar buildDate;
+    private final BuildResult result;
+    private final String jobName;
+    private final int buildNumber;
+    private final Calendar buildDate;
     private long duration = -1;
     private String nodeName;
     private String userName = null;
@@ -42,10 +42,10 @@ public class JobBuildResult implements Serializable {
 
     @Override
     public String toString() {
-        return new StringBuilder("jobName=").append(jobName).append(", buildNumber=").append(buildNumber)
-                .append(", result=").append(result).append(", buildDate=").append(buildDate)
-                .append(", duration=").append(duration).append(", nodeName=").append(nodeName)
-                .append(", userName=").append(userName).toString();
+        return "jobName=" + jobName + ", buildNumber=" + buildNumber +
+                ", result=" + result + ", buildDate=" + buildDate +
+                ", duration=" + duration + ", nodeName=" + nodeName +
+                ", userName=" + userName;
     }
 
     public BuildResult getResult() {
@@ -91,8 +91,7 @@ public class JobBuildResult implements Serializable {
     @Override
     @SuppressFBWarnings("HE_EQUALS_USE_HASHCODE")
     public boolean equals(Object obj) {
-        if (obj instanceof JobBuildResult) {
-            JobBuildResult r = (JobBuildResult) obj;
+        if (obj instanceof JobBuildResult r) {
             return is(r.buildNumber, r.jobName, r.result);
         }
 

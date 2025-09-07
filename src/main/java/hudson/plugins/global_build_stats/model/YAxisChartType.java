@@ -51,7 +51,7 @@ public enum YAxisChartType {
         }
     };
 
-    private YAxisChartType() {
+    YAxisChartType() {
     }
 
     public abstract String getLabel();

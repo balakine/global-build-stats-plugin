@@ -4,7 +4,7 @@ public interface FieldFilter {
 
     boolean isFieldValueValid(String fieldValue);
 
-    public static final FieldFilter ALL = new FieldFilter() {
+    FieldFilter ALL = new FieldFilter() {
         @Override
         public boolean isFieldValueValid(String fieldValue) {
             return true;

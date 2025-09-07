@@ -140,16 +140,16 @@ public enum HistoricScale {
         }
     };
 
-    private int calendarField;
-    private Integer[] fieldsToReset;
-    private String dateRangeFormatterPattern;
+    private final int calendarField;
+    private final Integer[] fieldsToReset;
+    private final String dateRangeFormatterPattern;
 
 
-    private HistoricScale(int _calendarField, String dateRangeFormatterPattern) {
+    HistoricScale(int _calendarField, String dateRangeFormatterPattern) {
         this(_calendarField, new Integer[0], dateRangeFormatterPattern);
     }
 
-    private HistoricScale(int _calendarField, Integer[] _fieldsToReset, String _dateRangeFormatterPattern) {
+    HistoricScale(int _calendarField, Integer[] _fieldsToReset, String _dateRangeFormatterPattern) {
         this.calendarField = _calendarField;
         this.fieldsToReset = _fieldsToReset;
         this.dateRangeFormatterPattern = _dateRangeFormatterPattern;

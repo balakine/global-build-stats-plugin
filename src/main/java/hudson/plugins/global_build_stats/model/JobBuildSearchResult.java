@@ -12,10 +12,10 @@ import hudson.Util;
 public class JobBuildSearchResult extends JobBuildResult {
 
     // Will be true if targetted job hasn't be deleted/renamed
-    private boolean jobAccessible;
+    private final boolean jobAccessible;
     // Will be true if isJobAccessible is true AND build result has not been deleted
-    private boolean buildAccessible;
-    private String jobUrl;
+    private final boolean buildAccessible;
+    private final String jobUrl;
 
     public JobBuildSearchResult(JobBuildResult decoree, boolean isJobAccessible, boolean isBuildAccessible, String jobUrl) {
         super(decoree.getResult(), decoree.getJobName(), decoree.getBuildNumber(), decoree.getBuildDate(),
