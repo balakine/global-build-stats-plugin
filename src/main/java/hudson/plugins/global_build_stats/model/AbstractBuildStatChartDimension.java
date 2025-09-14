@@ -11,6 +11,7 @@ import org.jfree.data.category.CategoryDataset;
 
 import java.awt.*;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -115,7 +116,7 @@ public abstract class AbstractBuildStatChartDimension {
                     boolean notBuildShown = Messages.Build_Results_Item_Legend_Statuses_NOT_BUILD().equals(status);
 
                     StringBuilder sb = new StringBuilder()
-                            .append("buildHistory?jobFilter=").append(URLEncoder.encode(config.getBuildFilters().getJobFilter()))
+                            .append("buildHistory?jobFilter=").append(URLEncoder.encode(config.getBuildFilters().getJobFilter(), StandardCharsets.UTF_8))
                             .append("&start=").append(range.getStart().getTimeInMillis())
                             .append("&end=").append(range.getEnd().getTimeInMillis())
                             .append("&successShown=").append(successShown)
@@ -124,10 +125,10 @@ public abstract class AbstractBuildStatChartDimension {
                             .append("&abortedShown=").append(abortedShown)
                             .append("&notBuildShown=").append(notBuildShown);
                     if (config.getBuildFilters().getNodeFilter() != null) {
-                        sb.append("&nodeFilter=").append(URLEncoder.encode(config.getBuildFilters().getNodeFilter()));
+                        sb.append("&nodeFilter=").append(URLEncoder.encode(config.getBuildFilters().getNodeFilter(), StandardCharsets.UTF_8));
                     }
                     if (config.getBuildFilters().getLauncherFilter() != null) {
-                        sb.append("&launcherFilter=").append(URLEncoder.encode(config.getBuildFilters().getLauncherFilter()));
+                        sb.append("&launcherFilter=").append(URLEncoder.encode(config.getBuildFilters().getLauncherFilter(), StandardCharsets.UTF_8));
                     }
                     return sb.toString();
                 }

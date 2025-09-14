@@ -3,6 +3,7 @@ package hudson.plugins.global_build_stats.model;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.model.Hudson;
 import hudson.plugins.global_build_stats.util.CollectionsUtil;
+import jenkins.model.Jenkins;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -150,7 +151,7 @@ public class JobBuildResultSharder {
                 }
             }
         }
-        Collections.sort(jobBuildResults, new JobBuildResult.AntiChronologicalComparator());
+        jobBuildResults.sort(new JobBuildResult.AntiChronologicalComparator());
         return jobBuildResults;
     }
 
@@ -197,7 +198,7 @@ public class JobBuildResultSharder {
 
     private static File getJobResultFolder() {
         return new File(
-                Hudson.getInstance().getRootDir().getAbsolutePath() + File.separator +
+                Jenkins.get().getRootDir().getAbsolutePath() + File.separator +
                         GBS_ROOT_PATH + File.separator + GBS_JOBRESULTS_PATH);
     }
 }

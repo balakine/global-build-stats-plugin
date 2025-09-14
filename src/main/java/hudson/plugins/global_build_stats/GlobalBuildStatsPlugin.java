@@ -106,7 +106,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     /**
-     * Hack allowing to either generate plugin informations (build stat configurations) OR
+     * Hack allowing to either generate plugin information (build stat configurations) OR
      * generate chart data for a given buildStatConfigId request parameter
      *
      * @author fcamblor
@@ -208,7 +208,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     /**
-     * At the end of every jobs, let's gather job result informations into global build stats
+     * At the end of every job, let's gather job result information into global build stats
      * persisted data
      */
     @Extension
@@ -232,7 +232,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     public static GlobalBuildStatsPlugin getInstance() {
-        return Hudson.getInstance().getPlugin(GlobalBuildStatsPlugin.class);
+        return Jenkins.get().getPlugin(GlobalBuildStatsPlugin.class);
     }
 
     // Form validations
@@ -286,7 +286,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     public HttpResponse doRecordBuildInfos() throws IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         business.recordBuildInfos();
 
@@ -314,7 +314,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     public void doCreateChart(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         // Passing null id since this is a not persisted BuildStatConfiguration
         BuildStatConfiguration config = FromRequestObjectFactory.createBuildStatConfiguration(null, req);
@@ -328,7 +328,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     public void doCreateChartMap(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         String buildStatId = req.getParameter("buildStatId");
         BuildStatConfiguration config;
@@ -348,7 +348,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
     }
 
     public void doBuildHistory(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         BuildHistorySearchCriteria searchCriteria = FromRequestObjectFactory.createBuildHistorySearchCriteria(req);
 
@@ -361,7 +361,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doUpdateBuildStatConfiguration(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         boolean regenerateId = Boolean.parseBoolean(req.getParameter("regenerateId"));
 
@@ -375,7 +375,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doAddBuildStatConfiguration(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         BuildStatConfiguration config = FromRequestObjectFactory.createBuildStatConfiguration(ModelIdGenerator.INSTANCE.generateIdForClass(BuildStatConfiguration.class), req);
         business.addBuildStatConfiguration(config);
@@ -387,7 +387,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doDeleteConfiguration(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         business.deleteBuildStatConfiguration(req.getParameter("buildStatId"));
 
@@ -396,7 +396,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doMoveUpConf(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         business.moveUpConf(req.getParameter("buildStatId"));
 
@@ -405,7 +405,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doMoveDownConf(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         business.moveDownConf(req.getParameter("buildStatId"));
 
@@ -414,7 +414,7 @@ public class GlobalBuildStatsPlugin extends Plugin {
 
     @RequirePOST
     public void doUpdateRetentionStrategies(StaplerRequest2 req, StaplerResponse2 res) throws ServletException, IOException {
-        Hudson.getInstance().checkPermission(getRequiredPermission());
+        Jenkins.get().checkPermission(getRequiredPermission());
 
         List<RetentionStrategy> selectedStrategies = new ArrayList<RetentionStrategy>();
         if (req.getParameterValues("retentionStrategies") != null) {

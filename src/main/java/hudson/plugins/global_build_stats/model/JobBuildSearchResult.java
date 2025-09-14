@@ -11,7 +11,7 @@ import hudson.Util;
 @SuppressFBWarnings("EQ_DOESNT_OVERRIDE_EQUALS")
 public class JobBuildSearchResult extends JobBuildResult {
 
-    // Will be true if targetted job hasn't be deleted/renamed
+    // Will be true if targeted job hasn't been deleted/renamed
     private final boolean jobAccessible;
     // Will be true if isJobAccessible is true AND build result has not been deleted
     private final boolean buildAccessible;

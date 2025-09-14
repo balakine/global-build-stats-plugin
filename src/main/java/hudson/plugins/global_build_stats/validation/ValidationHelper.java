@@ -11,7 +11,7 @@ public class ValidationHelper {
     }
 
     static boolean isMandatory(String value) {
-        return value != null && !"".equals(value);
+        return value != null && !value.isEmpty();
     }
 
     static boolean isBool(String value) {

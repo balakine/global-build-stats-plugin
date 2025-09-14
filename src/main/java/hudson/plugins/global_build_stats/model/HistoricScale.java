@@ -182,7 +182,7 @@ public enum HistoricScale {
     }
 
     private int getResetValueForCalendarField(int calendarField, Calendar c) {
-        int resetValue = -1;
+        int resetValue;
         if (calendarField == Calendar.DAY_OF_YEAR || calendarField == Calendar.DAY_OF_MONTH) {
             resetValue = 1;
         } else if (calendarField == Calendar.DAY_OF_WEEK) {

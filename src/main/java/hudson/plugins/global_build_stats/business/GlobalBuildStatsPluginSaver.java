@@ -32,7 +32,7 @@ public class GlobalBuildStatsPluginSaver {
 
     /**
      * See {@link #updatePlugin(hudson.plugins.global_build_stats.business.GlobalBuildStatsPluginSaver.BeforeSavePluginCallback)}
-     * Use of a size 1 thread pool frees us from worring about accidental thread death.
+     * Use of a size 1 thread pool frees us from worrying about accidental thread death.
      */
     /*package*/ final ExecutorService writer = Executors.newFixedThreadPool(1, new DaemonThreadFactory());
 

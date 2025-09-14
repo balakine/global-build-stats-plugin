@@ -7,5 +7,5 @@ import hudson.plugins.global_build_stats.business.GlobalBuildStatsPluginSaver;
  * @author fcamblor
  */
 public interface BuildDeletedListener {
-    void buildDeleted(Run<?, ?> buils, GlobalBuildStatsPluginSaver pluginSaver);
+    void buildDeleted(Run<?, ?> builds, GlobalBuildStatsPluginSaver pluginSaver);
 }

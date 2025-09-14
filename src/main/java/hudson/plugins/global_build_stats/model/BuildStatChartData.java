@@ -58,11 +58,7 @@ public class BuildStatChartData {
                         (List<? extends Comparable>) rowsField.get(dsb),
                         (List<? extends Comparable>) columnsField.get(dsb)));
             }
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalArgumentException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
+        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }

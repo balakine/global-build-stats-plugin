@@ -71,7 +71,7 @@ public abstract class PreV9AbstractMigrator<TFROM extends GlobalBuildStatsPOJO, 
     }
 
     protected static Run<?, ?> retrieveBuildFromJobBuildResult(JobBuildResult jbr) {
-        Job job = (Job) Jenkins.getInstance().getItemByFullName(jbr.getJobName());
+        Job job = (Job) Jenkins.get().getItemByFullName(jbr.getJobName());
         if (job != null) {
             return (Run<?, ?>) job.getBuildByNumber(jbr.getBuildNumber());
         }

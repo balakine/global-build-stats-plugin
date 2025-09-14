@@ -40,7 +40,7 @@ public class JobBuildResultFactory {
         boolean isBuildAccessible = false;
         String jobUrl = "";
 
-        Job targetJob = ((Job) Jenkins.getInstance().getItemByFullName(r.getJobName()));
+        Job targetJob = ((Job) Jenkins.get().getItemByFullName(r.getJobName()));
         // Link to job will be provided only if job has not been deleted/renamed
         if (targetJob != null) {
             isJobAccessible = true;

@@ -18,11 +18,11 @@ public class DoNotKeepBuildResultWhenDiscarded extends RetentionStrategy<DoNotKe
         return "doNotKeepBuildResultWhenDiscarded.jelly";
     }
 
-    public void buildDeleted(final Run<?, ?> build, GlobalBuildStatsPluginSaver pluginSaver) {
+    public void buildDeleted(final Run<?, ?> builds, GlobalBuildStatsPluginSaver pluginSaver) {
         pluginSaver.updatePlugin(new GlobalBuildStatsPluginSaver.BeforeSavePluginCallback() {
             @Override
             public void changePluginStateBeforeSavingIt(GlobalBuildStatsPlugin plugin) {
-                JobBuildResult jbr = JobBuildResultFactory.INSTANCE.createJobBuildResult(build);
+                JobBuildResult jbr = JobBuildResultFactory.INSTANCE.createJobBuildResult(builds);
 
                 plugin.getJobBuildResultsSharder().queueResultToRemove(jbr);
             }

@@ -14,11 +14,7 @@ public class CollectionsUtil {
     }
 
     public static <T> Set<T> toSet(List<T> list) {
-        Set<T> set = new HashSet<T>();
-        for (T t : list) {
-            set.add(t);
-        }
-        return set;
+        return new HashSet<T>(list);
     }
 
     public static <T, U> void mapMergeAdd(Map<T, List<U>> map, Map<T, List<U>> mapToAdd) {

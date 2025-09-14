@@ -7,5 +7,5 @@ import hudson.plugins.global_build_stats.business.GlobalBuildStatsPluginSaver;
  * @author fcamblor
  */
 public interface BuildCompletedListener {
-    void buildCompleted(Run<?, ?> buils, GlobalBuildStatsPluginSaver pluginSaver);
+    void buildCompleted(Run<?, ?> builds, GlobalBuildStatsPluginSaver pluginSaver);
 }

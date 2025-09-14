@@ -40,7 +40,7 @@ public class ModelIdGenerator {
 
     @SuppressFBWarnings("DMI_RANDOM_USED_ONLY_ONCE")
     public String generateIdForClass(Class clazz) {
-        String id = null;
+        String id;
         do {
             StringBuilder b = new StringBuilder();
             Random r = new SecureRandom();

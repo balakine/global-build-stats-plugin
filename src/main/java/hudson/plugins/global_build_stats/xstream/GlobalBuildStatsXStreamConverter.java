@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  * - Create a new package hudson.plugins.global_build_stats.xstream.migration.v[X]
  * - Inside this package, copy/paste every classes located in hudson.plugins.global_build_stats.xstream.migration.v[X-1]
  * - Rename every *V[X-1]* POJOs to *V[X]* POJO
- * - Eventually, change attributes in V[X]GlobalBuildStatsPOJO (for example, if additionnal attribute has appeared)
+ * - Eventually, change attributes in V[X]GlobalBuildStatsPOJO (for example, if additional attribute has appeared)
  * - Provide implementation for V[X]Migrator.migrate() algorithm
  * - If parsing algorithm has changed, update V[X]Migrator.readGlobalBuildStatsPOJO with the new algorithm (if, for example, new root
  * elements has appeared in XStream file)

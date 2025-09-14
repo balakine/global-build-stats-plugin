@@ -2,12 +2,12 @@ package hudson.plugins.global_build_stats.xstream.migration;
 
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
-import hudson.model.Hudson;
 import hudson.model.Job;
 import hudson.model.Run;
 import hudson.plugins.global_build_stats.model.BuildStatConfiguration;
 import hudson.plugins.global_build_stats.model.JobBuildResult;
 import hudson.plugins.global_build_stats.model.ModelIdGenerator;
+import jenkins.model.Jenkins;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +79,7 @@ public abstract class PreV8AbstractMigrator<TFROM extends GlobalBuildStatsPOJO, 
     }
 
     protected static Run<?, ?> retrieveBuildFromJobBuildResult(JobBuildResult jbr) {
-        Job job = (Job) Hudson.getInstance().getItemByFullName(jbr.getJobName());
+        Job job = (Job) Jenkins.get().getItemByFullName(jbr.getJobName());
         if (job != null) {
             return (Run<?, ?>) job.getBuildByNumber(jbr.getBuildNumber());
         }

@@ -45,7 +45,7 @@ public class DiscardResultsOlderThanDays extends RetentionStrategy<DiscardResult
         purgeOldBuildResults(pluginSaver, System.currentTimeMillis());
     }
 
-    public void buildCompleted(Run<?, ?> buils, GlobalBuildStatsPluginSaver pluginSaver) {
+    public void buildCompleted(Run<?, ?> builds, GlobalBuildStatsPluginSaver pluginSaver) {
         final long now = System.currentTimeMillis();
         if (lastPurgeDate == null || now > lastPurgeDate.getTime() + PURGE_FREQUENCY) {
             purgeOldBuildResults(pluginSaver, now);

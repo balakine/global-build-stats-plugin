@@ -1,6 +1,5 @@
 package hudson.plugins.global_build_stats.business;
 
-import hudson.model.Hudson;
 import hudson.model.Job;
 import hudson.model.Run;
 import hudson.plugins.global_build_stats.GlobalBuildStatsPlugin;
@@ -11,6 +10,7 @@ import hudson.plugins.global_build_stats.rententionstrategies.RetentionStrategy;
 import hudson.plugins.global_build_stats.util.CollectionsUtil;
 import hudson.util.DataSetBuilder;
 import hudson.util.ShiftedCategoryAxis;
+import jenkins.model.Jenkins;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.LegendItem;
@@ -91,7 +91,7 @@ public class GlobalBuildStatsBusiness {
             @Override
             public void changePluginStateBeforeSavingIt(GlobalBuildStatsPlugin plugin) {
 
-                List<JobBuildResult> jobBuildResultsRead = Hudson.get().getAllItems(Job.class).stream()
+                List<JobBuildResult> jobBuildResultsRead = Jenkins.get().getAllItems(Job.class).stream()
                         // Cast to Job<?, ?> is necessary due to raw type returned from getAllItems
                         .map(job -> (Job<?, ?>) job)
                         .map(Job::getBuilds)
@@ -120,7 +120,7 @@ public class GlobalBuildStatsBusiness {
         }
 
         // Sorting on job results dates
-        Collections.sort(filteredJobBuildResults, new JobBuildResult.AntiChronologicalComparator());
+        filteredJobBuildResults.sort(new JobBuildResult.AntiChronologicalComparator());
 
         return filteredJobBuildResults;
     }
@@ -304,7 +304,7 @@ public class GlobalBuildStatsBusiness {
         }
 
         List<JobBuildResult> sortedJobResults = new ArrayList<JobBuildResult>(this.plugin.getJobBuildResults());
-        Collections.sort(sortedJobResults, new JobBuildResult.AntiChronologicalComparator());
+        sortedJobResults.sort(new JobBuildResult.AntiChronologicalComparator());
 
         Calendar d2 = new GregorianCalendar();
         Calendar d1 = config.getHistoricScale().getPreviousStep(d2);
